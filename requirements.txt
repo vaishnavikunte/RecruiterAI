@@ -1,4 +1,9 @@
 pandas
+numpy
 sentence-transformers
 faiss-cpu
 llama-cpp-python
+scikit-learn
+tqdm
+jupyter
+ipykernel
