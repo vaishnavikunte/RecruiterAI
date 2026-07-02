@@ -1,0 +1,81 @@
+# ============================================================================
+# Team identity
+# ============================================================================
+team_name: "Team Eclipse"
+
+primary_contact:
+  name: "Pranit Waghmare"
+  email: "waghmarepranit2411@gmail.com"  
+  phone: "+91-90963 55149"      
+
+team_members:
+  - name: "Pranit Waghmare"
+    email: "waghmarepranit2411@gmail.com"
+    role: "ML Engineer"       
+  - name: "Deepali Ganachari"
+    email: "deepaliganachari95@gmail.com"
+    role: "Data Engineer"
+  - name: "Vaishnavi Kunte"
+    email: "vaishnavi.skunte@gmail.com"
+    role: "ML Engineer"
+
+# ============================================================================
+# Code and reproducibility
+# ============================================================================
+github_repo: "https://github.com/vaishnavikunte/RecruiterAI"
+
+
+sandbox_link: "https://mybinder.org/v2/gh/vaishnavikunte/RecruiterAI/HEAD?urlpath=%2Fdoc%2Ftree%2Fnotebooks%2Ftraining.ipynb"
+
+reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
+# The single command that produces submission.csv from candidates.jsonl.
+# Should run end-to-end within 5 minutes on CPU with 16GB RAM and no network.
+
+# ============================================================================
+# Compute environment
+# ============================================================================
+compute:
+  platform: "MacBook Air M1"                    
+  cpu_cores: 8                                 
+  ram_gb: 8                                   
+  python_version: "3.12.4"                      
+  os: "macOS 26.2"                           
+  uses_gpu_for_inference: false                 # Must be false — see compute constraints
+  has_network_during_ranking: false             # Must be false — no API calls during ranking
+  pre_computation_required: false               # true if you pre-compute embeddings or train models offline
+  pre_computation_time_minutes: 0               # Approximate, if applicable
+
+# ============================================================================
+# AI tools declaration
+# ============================================================================
+
+ai_tools_used:
+  - "Claude"        # for architecture discussion
+  - "ChatGPT"        # for code work
+  - "GitHub Copilot"  # for autocomplete
+
+ai_usage_summary: |
+  Briefly describe how AI tools were used. Examples:
+  -Claude was used for code review and architectural discussions to improve system design and structure. 
+  -ChatGPT was used to debug Python issues and assist in writing and refining code logic. 
+  -GitHub Copilot was used for inline code autocomplete, and Cursor was used for code refactoring and improving development efficiency. 
+  -No candidate data was fed to any LLM.
+
+# ============================================================================
+# Approach summary (optional but recommended)
+# ============================================================================
+methodology_summary: |
+  ≤200 word summary of your approach. Strongly recommended.
+
+  Example:
+  "Semantic AI-based candidate ranking using pretrained sentence embeddings and cosine similarity. Candidate data is first cleaned, flattened, and consolidated by extracting profile details, recruiter signals, skills, and career history into a structured format. A rule-based quality filtering stage removes suspicious or inconsistent profiles by detecting unrealistic experience claims, timeline inconsistencies, excessive job hopping, consulting-only histories, inactive candidates, and title mismatches."
+
+# ============================================================================
+# Declarations
+# ============================================================================
+declarations:
+  read_submission_spec: true        # I have read submission_spec.md in full
+  code_is_original_work: true       
+  no_collusion: true                # I have not coordinated my submission with other teams
+  honeypot_check_done: false        # OPTIONAL — set true if you explicitly checked for honeypots in your ranking
+  reproduction_tested: true         # I have tested that my reproduce_command runs end-to-end
